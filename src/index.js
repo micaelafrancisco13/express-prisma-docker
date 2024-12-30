@@ -40,4 +40,10 @@ app.delete('/items/:id', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const DATABASE_URL = process.env.POSTGRES_URL;
+app.listen(PORT, () => {
+    console.group("Production Environment")
+    console.log(`Server running on port ${PORT}`)
+    console.log(`Hosted on ${DATABASE_URL}`);
+    console.groupEnd();
+});
