@@ -6,10 +6,6 @@
     "dev": "nodemon --watch src --legacy-watch src/index.js",
     "prod": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-
-    "generate": "prisma generate",
-    "migrate:prod": "prisma migrate deploy",
-    "build": "npm run generate && npm run migrate:prod && npm run prod"
   },
   "keywords": [],
   "author": "",

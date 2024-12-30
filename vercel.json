@@ -6,7 +6,5 @@
       "use": "@vercel/node"
     }
   ],
-  "env": {
-    "DATABASE_URL": "@vercel-postgresql-url"
-  }
+  "buildCommand": "npx prisma generate && npx prisma migrate deploy"
 }
