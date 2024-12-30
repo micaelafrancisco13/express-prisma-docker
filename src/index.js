@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 // Create
 app.post('/items', async (req, res) => {
     const { name } = req.body;
+    console.log("name", name);
     const newItem = await prisma.item.create({ data: { name } });
     res.json(newItem);
 });
