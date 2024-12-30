@@ -2,7 +2,7 @@
 
 if [ -z "$1" ]; then
   echo "Error: Migration name is required."
-  echo "Usage: ./db-update.sh <migration-name>"
+  echo "Usage: ./db-apply-new-migration.sh <migration-name>"
   exit 1
 fi
 

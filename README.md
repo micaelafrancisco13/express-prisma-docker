@@ -17,13 +17,15 @@ To start this app locally, follow these steps:
 
 3. **Initial Database Migration (First-Time Setup)**
 
-    If this is your first time running the app locally, you need to apply the initial database migration:
+    If this is your first time running the app locally, you need to apply the initial database migration(s):
 
     Run the following command in the root project terminal:
     ```bash
-    scripts/db-migrate.sh add-initial-migration
+    scripts/db-apply-pending-migration.sh
     ```
-    This will generate and apply the initial Prisma migration to your database.
+   This applies all pending migrations (e.g., add-new-table) to your local database.
+   If the migration includes new tables or schema changes, they will now be reflected in your local database.
+   **_Note_** that this command must be run occasionally if there are new migrations in the `prisma/migrations` directory.
 
 4. **Updating Database Schema (On Changes to `prisma/schema.prisma`)**
 
@@ -31,7 +33,7 @@ To start this app locally, follow these steps:
     
     Run the following command in the root project terminal:
     ```bash
-    scripts/db-migrate.sh <name-of-migration>
+    scripts/db-apply-new-migration.sh <name-of-migration>
     ```
     Replace `<name-of-migration>` with a descriptive name for your migration.
 
