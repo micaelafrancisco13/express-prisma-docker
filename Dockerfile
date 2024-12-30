@@ -8,8 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install -g nodemon
-RUN npm install
+RUN npm install --production
 
 # Copy the application code
 COPY . .
@@ -21,4 +20,4 @@ RUN npx prisma generate
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

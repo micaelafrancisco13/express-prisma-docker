@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "migrate": "npx prisma generate && npx prisma migrate deploy",
-    "dev": "npm run migrate && node src/index.js"
+    "migrate": "npx prisma migrate deploy",
+    "start": "npm run migrate && node src/index.js"
   },
   "keywords": [],
   "author": "",
