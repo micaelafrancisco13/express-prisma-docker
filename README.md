@@ -4,26 +4,19 @@
 
 To start this app locally, follow these steps:
 
-1. **Install Dependencies**
-
-   Before starting the containers, install the required dependencies by running:
-   ```shell
-   npm install
-    ```
-   
-2. **Start the Containers**
+1. **Start the Containers**
 
    Run the following command in the root of the project to build and start the containers:
     ```shell
    docker-compose up --build --no-cache -d
     ```
    
-3. **Verify the Containers**
+2. **Verify the Containers**
 
    Ensure that both the **app** and **db** containers are successfully running:
    - Use `docker-ps` to check the status of the containers.
 
-4. **Updating Database Schema (On Changes to `prisma/schema.prisma`)**
+3. **Updating Database Schema (On Changes to `prisma/schema.prisma`)**
 
    If you make local changes to `prisma/schema.prisma`, you must generate and apply a new migration afterward:    
    Run the following command in the root project terminal:
@@ -31,6 +24,23 @@ To start this app locally, follow these steps:
    scripts/db-apply-new-migration.sh <name-of-migration>
     ```
    Replace `<name-of-migration>` with a descriptive name for your migration.
+
+
+## Managing Dependencies
+
+### Installing npm Packages
+To install new npm packages and sync them with the container:
+```bash
+scripts/sync-deps-install.sh <name-of-npm-package>
+```
+Replace `<name-of-npm-package>` with the name of the package you want to install.
+
+### Uninstalling npm Packages
+To uninstall npm packages and sync the changes with the container:
+```bash
+scripts/sync-deps-uninstall.sh <name-of-npm-package>
+```
+Replace `<name-of-npm-package>` with the name of the package you want to uninstall.
 
 
 ## Notes

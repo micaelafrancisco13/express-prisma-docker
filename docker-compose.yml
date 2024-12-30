@@ -10,11 +10,7 @@ services:
       - db
     volumes:
       - .:/app
-      - ./node_modules:/app/node_modules
-
-  #    volumes:
-#      - .:/app
-#      - /app/node_modules
+      - /app/node_modules
 
   db:
     image: postgres:17.2
