@@ -8,11 +8,11 @@ fi
 
 MIGRATION_NAME=$1
 
-echo "Running Prisma migration with name: $MIGRATION_NAME..."
-docker-compose exec app npx prisma migrate dev --name "$MIGRATION_NAME"
-
 echo "Regenerating Prisma client..."
 docker-compose exec app npx prisma generate
+
+echo "Running Prisma migration with name: $MIGRATION_NAME..."
+docker-compose exec app npx prisma migrate dev --name "$MIGRATION_NAME"
 
 echo "Restarting app container..."
 docker-compose restart app

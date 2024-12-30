@@ -7,15 +7,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install -g nodemon
-RUN npm install
-
 # Copy the application code
 COPY . .
-
-# Generate Prisma client
-RUN npx prisma generate
 
 # Expose the port
 EXPOSE 3000
